@@ -1,6 +1,5 @@
 void main() {
-  print(tester(4444);
-
+  print(tester(4444));
 }
 
 String tester(int a) {
@@ -12,7 +11,7 @@ String tester(int a) {
   int a3 = a % 100 ~/ 10;
   // a의 네번째 숫자 출력
   int a4 = a % 10 ~/ 1;
-  if(a1==a2 && a2==a3 && a3==a4) {
+  if (a1 == a2 && a2 == a3 && a3 == a4) {
     return '$a';
   } else {
     return "no";
