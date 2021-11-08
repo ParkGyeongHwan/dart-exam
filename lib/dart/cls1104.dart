@@ -2,8 +2,8 @@ import 'dart:math';
 
 void main() {
   Cleric cleric = Cleric(name: '이름', hp: 100, mp: 50);
-  cleric.mp = 5;
-  print(cleric.pray(1)); // 3~5 회복 확인
+  cleric.mp = 9;
+  print(cleric.pray(1));
 }
 
 class Cleric {
@@ -11,10 +11,10 @@ class Cleric {
   int hp;
   int mp;
 
-  final int maxHp = 50; // 최대 HP
-  final int maxMp = 10;
+  static const int maxHp = 50;
+  static const int maxMp = 50;
 
-  Cleric({this.name, this.hp, this.mp});
+  Cleric(this.name,{this.hp=maxHp, this.mp = maxMp});
 
   void selfAid() {
     mp -= 5;
@@ -22,12 +22,17 @@ class Cleric {
   }
 
   int pray(int sec) {
-    int result = 0;
+    int initialMp = mp;
     Random random = Random();
     mp = mp + sec + random.nextInt(3);
-    if (mp >= 50) {
-      return 0;
+    if (mp >= maxMp) {
+      mp = maxMp;
     }
-    return mp;
+    //실제 회복된 mp량
+    return mp - initialMp;
   }
 }
+
+
+
+
