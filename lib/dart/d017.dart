@@ -1,9 +1,9 @@
 void main() {
-  print(maxnumber(1, 2, 3, 4, 5));
-  print(minnumber(1, 2, 3, 4, 5));
+  print(maxNumber(1, 2, 3, 4, 5));
+  print(minNumber(1, 2, 3, 4, 5));
 }
 
-int maxnumber(a, b, c, d, e) {
+int maxNumber(a, b, c, d, e) {
   if (a > b && a > c && a > d && a > e) {
     return a;
   } else if (b > a && b > c && b > d && b > e) {
@@ -17,7 +17,7 @@ int maxnumber(a, b, c, d, e) {
   }
 }
 
-int minnumber(a, b, c, d, e) {
+int minNumber(a, b, c, d, e) {
   if (a < b && a < c && a < d && a < e) {
     return a;
   } else if (b < a && b < c && b < d && b < e) {
