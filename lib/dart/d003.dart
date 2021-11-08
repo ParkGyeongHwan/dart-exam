@@ -11,7 +11,7 @@ void main() {
 
  nums[0] = 10;
  print(nums);
-a
+
  print(nums[0]);
  print(nums[4]);
 
