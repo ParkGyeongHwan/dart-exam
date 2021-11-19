@@ -14,10 +14,8 @@ void main() {
 }
 
 int deck(List<int> card, List<int> nums) {
-  card.remove(nums[0]);
-  card.remove(nums[1]);
-  card.remove(nums[2]);
-  card.remove(nums[3]);
-
+  for (int i = 0; i < 4; i++) {
+    card.remove(nums[i]);
+  }
   return (card[0]);
 }
