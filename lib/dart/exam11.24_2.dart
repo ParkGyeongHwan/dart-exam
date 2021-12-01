@@ -10,10 +10,10 @@ void main() {
   }
   a.sort();
   // print(a);
-  print(sibal(a));
+  print(card(a));
 }
 
-int sibal(List<int> a) {
+int card(List<int> a) {
   int j = (a[3] * 10) + (a[2] * 10) + a[0] + a[1];
   return j;
 }

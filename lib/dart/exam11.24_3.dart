@@ -21,14 +21,14 @@ void main() {
 
   //list[2][1]
   //print(list);
-  List<List<int>> result = sibal(list);
+  List<List<int>> result = blackWhite(list);
   for (int i = 0; i < result.length; i++) {
     String last = result[i].join(' ');
     print(last);
   }
 }
 
-List<List<int>> sibal(List<List<int>> list) {
+List<List<int>> blackWhite(List<List<int>> list) {
   for (int i = 0; i < list.length; i++) {
     for (int l = 0; l < list[i].length; l++) {
       if (list[i][l] >= 128) {

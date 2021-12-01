@@ -3,10 +3,10 @@ import 'dart:io';
 
 void main() {
   List<String> b = stdin.readLineSync(encoding: utf8).split('');
-  print(sibal(b));
+  print(ancTxt(b));
 }
 
-int sibal(List<String> b) {
+int ancTxt(List<String> b) {
   int num = 0;
 
   for (int i = 0; i < b.length; i++) {
