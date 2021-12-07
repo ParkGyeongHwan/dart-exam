@@ -1,23 +1,29 @@
+import 'dart:convert';
 import 'dart:io';
 
 void main() {
-  List<String> address = [];
-  int M = int.parse(stdin.readLineSync());
-  for (int i = 0; i < M; i++) {
-    address.add(stdin.readLineSync());
+  int n = int.parse(stdin.readLineSync(encoding: utf8));
+
+  List<String> ipAddresses = [];
+  for (int i = 0; i < n; i++) {
+    String input = stdin.readLineSync(encoding: utf8);
+    ipAddresses.add(input);
   }
 
-  ipAddress(M, address).forEach((e) => print(e));
+  IPChecker ipChecker = IPChecker();
+
+  for (String ip in ipAddresses) {
+    print(ipChecker.checkIP(ip));
+  }
 }
 
-List<bool> ipAddress(int M, List<String> ipList) {
-  List<bool> result = [];
-  RegExp regExp = RegExp(
-    r"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$",
-    caseSensitive: false,
-    multiLine: false,
-  );
+class IPChecker {
+  RegExp _regExp = RegExp(
+      r'^(\d|\d{2}|1\d{2}|2[0-4][0-9]|25[0-5])\.(\d|\d{2}|1\d{2}|2[0-4][0-9]|25[0-5])\.(\d|\d{2}|1\d{2}|2[0-4][0-9]|25[0-5])\.(\d|\d{2}|1\d{2}|2[0-4][0-9]|25[0-5])$');
 
-  ipList.forEach((e) => result.add(regExp.hasMatch(e)));
-  return result;
-}
+  bool checkIP(String ip) {
+    bool result = _regExp.hasMatch(ip);
+
+    return result;
+  }
+} 
